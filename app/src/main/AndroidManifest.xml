@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.footsalmanager">
+    <!-- 인터넷에 접근 할 수 있는 권한 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 카메라와 갤러리에 접근 할 수 있는 권한 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
 
     <application
         android:allowBackup="true"
@@ -8,14 +17,29 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.FieldActiviry"></activity>
+        <activity android:name=".Activity.viewerClickActivity" />
+        <activity android:name=".Activity.MyPageActivity" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Activity.ViewerActivity" />
+        <activity android:name=".Activity.EnrollActivity" />
+        <activity android:name=".Activity.SignUpActivity" />
+        <activity android:name=".Activity.LobbyActivity" />
+
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="8aaef00eee0518c59fc9d2b3c63e1a03"/>
+
+        <service android:name=".GPS" />
     </application>
 
 </manifest>
