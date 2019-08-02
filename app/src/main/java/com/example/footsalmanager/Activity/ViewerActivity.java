@@ -75,7 +75,6 @@ public class ViewerActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
         viewerDatas.clear();
         setData();
         setRecyclerView();
